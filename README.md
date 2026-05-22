@@ -1,100 +1,68 @@
-````md
-# 🥗 Projeto NutriApp
+# NutriApp - Consumidor de API
 
-Um projeto simples desenvolvido com **HTML**, **CSS** e **JavaScript** consumindo uma API de posts sobre nutrição, dieta e emagrecimento.
-
-## 📌 Sobre o projeto
-
-O objetivo do projeto foi praticar:
-
-- Consumo de API com JavaScript
-- Manipulação do DOM
-- Renderização dinâmica de dados
-- Estruturação com HTML
-- Estilização com CSS
-
-Os dados são carregados dinamicamente através de uma API JSON contendo informações como:
-
-- Título
-- Imagem de capa
-- Subtítulo
-- Categoria
+Este é um projeto web simples e responsivo desenvolvido em JavaScript Vanilla. Ele consome uma API externa de posts sobre nutrição, processa os dados retornados e os renderiza dinamicamente na tela do usuário manipulando o DOM.
 
 ---
 
-## 🚀 Tecnologias utilizadas
+## 📸 Demonstração
 
-- HTML5
-- CSS3
-- JavaScript
-- API JSON
+Abaixo você pode conferir o visual e o funcionamento da aplicação:
 
----
+![Visão Geral da API](api1.png)
 
-## 📷 Funcionalidades
-
-✅ Listagem dinâmica de posts  
-✅ Exibição de imagens  
-✅ Categorias dos artigos  
-✅ Estrutura responsiva  
-✅ Consumo de API com `fetch()`
+![Exibição dos Posts](api2.png)
 
 ---
 
-## 📂 Estrutura do projeto
+## 📁 Estrutura do Projeto
 
-```bash
-📁 projeto
- ┣ 📄 index.html
- ┣ 📄 style.css
- ┣ 📄 script.js
-````
+O repositório está organizado com a seguinte estrutura de arquivos:
 
----
+```text
+├── api1.png
+├── api2.png
+├── index.html
+├── script.js
+└── style.css
 
-## 🔗 Exemplo da API utilizada
-
-```json
-{
-  "id": 1,
-  "titulo": "Refeições proteicas para fazer antes de dormir",
-  "capa": "URL_DA_IMAGEM",
-  "subtitulo": "Descrição do artigo...",
-  "categoria": "Dieta"
-}
 ```
 
 ---
 
-## 💻 Como executar o projeto
+## 🛠️ Tecnologias Utilizadas
 
-1. Clone este repositório:
+* **HTML5:** Estruturação semântica da página (contendo a lista base para os posts).
+* **CSS3:** Estilização e layout dos elementos (gerenciado via `style.css`).
+* **JavaScript (ES6):** * **Fetch API:** Para realizar as requisições assíncronas de forma nativa.
+* **Promises (`.then` / `.catch`):** Para o tratamento da resposta e controle de erros.
+* **Método `.map()`:** Para percorrer os dados recebidos e criar a estrutura HTML de cada post dinamicamente.
 
-```bash
-git clone https://github.com/seu-usuario/consumindoprimeiraapi.git
-```
 
-2. Abra a pasta do projeto
-
-3. Execute o arquivo `index.html`
 
 ---
 
-## 📚 O que aprendi com esse projeto
+## ⚙️ Como Funciona o Fluxo de Dados?
 
-Durante o desenvolvimento pratiquei:
+1. **Requisição:** A função `nutriApp()` é disparada assim que o script é carregado, fazendo um chamado `GET` para a URL `https://sujeitoprogramador.com/rn-api/?api=posts`.
+2. **Tratamento:** O formato da resposta é convertido para JSON.
+3. **Manipulação do DOM:** Para cada item do array de posts recebido, o JavaScript cria:
+* Um elemento `<li>` (container do post).
+* Um elemento `<strong>` (para o título).
+* Um elemento `<img>` (para a imagem de capa).
+* Um elemento `<a>` (para o subtítulo/descrição).
 
-* Requisições HTTP
-* Uso do `fetch`
-* Trabalhar com APIs
-* Manipulação de arrays
-* Criação dinâmica de elementos HTML
-* Organização de código front-end
+
+4. **Injeção:** Todos esses elementos são aninhados e injetados diretamente dentro da `<ul>` identificada com o id `#app` no HTML.
+
+---
+
+## 🚀 Como Executar o Projeto
+
+1. Certifique-se de ter todos os arquivos listados na [Estrutura do Projeto](https://www.google.com/search?q=%23-estrutura-do-projeto) no mesmo diretório.
+2. Abra o arquivo `index.html` diretamente em qualquer navegador web de sua preferência (ou utilize a extensão *Live Server* no VS Code).
+3. Certifique-se de estar conectado à internet para que a API consiga carregar os posts e as imagens externas com sucesso.
 
 ---
 
 ## 👨‍💻 Autor
-
-Desenvolvido por Lucas 🚀
-
----
+Desenvolvido com por Lucas Melo ☕.
